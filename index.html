@@ -1,0 +1,133 @@
+<html >
+  <head>
+    <meta charset="UTF-8">
+      <title>Weather</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+    <link rel='stylesheet prefetch' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css'>
+    <link rel="stylesheet" href="css/weather-icons.min.css">
+    <link rel="stylesheet" href="css/weather-icons-wind.min.css">
+    <link rel="stylesheet" href="css/style.css">
+
+  </head>
+<body>
+  <h2>Instant Weather</h2>
+
+
+  <div class="grid grid-pad">
+    <div class="fbox">
+     <div class="fcol">
+       <div class="module">
+         <h3 id="locDesc"></h3>
+       </div>
+       <div class="col-1-4 main"><div class="highlight-on" id="f"><i class="wi wi-fahrenheit"></i></div></div>
+       <div class="col-1-2 main mid"><div class="circle" id="temp"><i class="wi wi-thermometer"></i><br><div id="currTemp"></div></div></div>
+       <div class="col-1-4 main"><div class="highlight-off" id="c"><i class="wi wi-celsius"></i></div></div>
+       <div class="module" id="summary">Current conditions:
+       </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="grid grid-pad">
+    <div class="fbox">
+     <div class="fcol">
+       <div class="module" id="cldIcon">
+         <i class="wi wi-day-sunny"></i>
+       </div>
+       <div class="module" ><div id="cloudCover">Loading...</div>
+       </div>
+     </div>
+     <div class="fcol">
+       <div class="module" id="precipIcon">
+         <i class="wi wi-umbrella wi-fw"></i>
+         <i class="wi wi-na"></i>
+       </div>
+       <div class="module" id="precipitation">Loading...</div>
+     </div>
+    <div class="fcol">
+       <div class="module">
+         <i class="wi wi-humidity wi-fw"></i>
+       </div>
+       <div class="module" id="humidity">Loading...</div>
+     </div>
+
+  </div>
+</div>
+  <div class="grid grid-pad">
+    <div class="fbox">
+     <div class="fcol">
+       <div class="module">
+         <i class="wi wi-barometer wi-fw"></i>
+       </div>
+       <div class="module" id="pressure">Loading</div>
+     </div>
+     <div class="fcol">
+       <div class="module" id="bfs">
+         <i class="wi wi-strong-wind"></i>
+       </div>
+       <div class="module" id="wind">Loading</div>
+     </div>
+    <div class="fcol">
+       <div class="module">
+         <i class="wi wi-meteor wi-fw"></i>
+       </div>
+       <div class="module" id="alerts">Loading</div>
+    </div>
+  </div>
+  </div>
+
+  <div class="grid grid-pad credit">
+    <div class="fbox">
+    <div class="fcol">
+      <div class="module" id="sevenDaySummary">
+      </div>
+    </div>
+  </div>
+  <div class="fbox">
+    <div class="fcol">
+      <div class="module" id="day1icon">
+      </div>
+      <div class="module" id="day1text">
+      </div>
+    </div>
+    <div class="fcol">
+      <div class="module" id="day2icon">
+      </div>
+      <div class="module" id="day2text">
+      </div>
+    </div>
+    <div class="fcol">
+      <div class="module" id="day3icon">
+      </div>
+      <div class="module" id="day3text">
+      </div>
+    </div>
+    <div class="fcol">
+      <div class="module" id="day4icon">
+      </div>
+      <div class="module" id="day4text">
+      </div>
+    </div>
+    <div class="fcol">
+      <div class="module" id="day5icon">
+      </div>
+      <div class="module" id="day5text">
+      </div>
+    </div>
+  </div>
+    <a href="https://darksky.net/poweredby/" target="_blank">Powered by Dark Sky</a>
+  </div>
+
+<div id="footer">&copy;2016 David Genest
+</div>
+<script src='https://code.jquery.com/jquery-2.2.4.min.js'></script>
+<script src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/velocity/1.2.3/velocity.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/velocity/1.2.3/velocity.ui.js'></script>
+<script src='js/dateformat.js'></script><script src="js/index.js"></script>
+
+
+</body>
+</html>

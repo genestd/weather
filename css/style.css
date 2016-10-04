@@ -1,0 +1,260 @@
+*, *:after, *:before {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.grid {
+  background: white;
+  margin: 0 0 20px 0;
+
+}
+.grid:after {
+    /* Or @extend clearfix */
+    content: "";
+    display: table;
+    clear: both;
+}
+/* Opt-in outside padding */
+.grid-pad {
+  padding: 20px 0 10px 20px;
+}
+[class*='col-'] {
+  float: left;
+  padding-right: 20px;
+}
+
+[class*='col-']:last-of-type {
+  	padding-right: 20px;
+}
+
+.col-1-2 {
+	width: 50%;
+}
+.col-1-4 {
+	width: 25%;
+}
+
+.module {
+  padding: 10px;
+  background: #eee;
+  text-align: center;
+}
+
+/*.grid-pad:last-of-type {
+    padding-right: 20px;
+}*/
+.fbox {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  overflow: hidden;
+  margin-bottom: 10px;
+}
+.fcol {
+  flex: 1;
+  background: #eee;
+  margin-right:20px;
+}
+
+body {
+	padding: 10px 50px 50px;
+  background-color: #333333;
+}
+
+h2 {
+  color: white;
+  text-align: center;
+}
+a {
+  color: #880c30;
+}
+/* Temperature Holder */
+.circle{
+  background-color: #880C30;
+  height:150px;
+  width:150px;
+  border:2px solid #000;
+  border-radius:50%;
+  border-color: #ffffff;
+  color:#ffffff;
+  text-align: center;
+  font-size: 48px;
+  padding-top: 20px;
+}
+/* Style the temperature box */
+.main{
+  height: 170px;
+  text-align: center;
+  background-color: #eee;
+}
+
+#temp{
+  margin-left: auto;
+  margin-right: auto;
+}
+/* Keep thermometer same size even if screen is small */
+#temp i{
+  font-size:48;
+  color: #ffffff;
+}
+
+#day1icon, #day2icon, #day3icon, #day4icon,#day5icon{
+  padding: 20px 0px 0px 0px;
+}
+#day1text, #day2text, #day3text, #day4text,#day5text{
+  padding-left: 0px;
+  padding-right: 0px;
+}
+.credit{
+  text-align: left;
+  padding-bottom: 5px;
+}
+
+#footer{
+  width: 100%;
+  background-color: #880c30;
+  text-align: center;
+  color: #ffffff;
+}
+
+/* set weather icon size */
+i{
+  font-size: 48px;
+  color: #880c30;
+}
+
+/* Toggle the Far/Cel selectors */
+.highlight-on{
+  border-style: solid;
+  border-color: #ccc;
+  background: #880c30;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 50%;
+  padding-top: 3px;
+  width: 55px;
+}
+.highlight-on i{
+  color: #ffffff;
+}
+.highlight-off{
+  border-style: solid;
+  border-color: #ccc;
+  background: #eee;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 50%;
+  width: 50px;
+  cursor: pointer;
+}
+/* Change font size for small screens;
+   prevents grid overflow */
+@media (max-width: 580px){
+  i{ font-size:32px;
+   }
+   body {
+     padding: 10px 10px 50px;
+     background-color: #333333;
+   }
+   .module {
+     padding: 5px;
+     background: #eee;
+     text-align: center;
+   }
+   .fbox{
+     margin-top: 10px;
+     margin-left: 10px;
+     margin-right: 10px;
+   }
+   .fcol{
+     margin-right: 5px;
+   }
+   /* Opt-in outside padding */
+   .grid-pad {
+     padding: 10px 0 10px 5px;
+   }
+
+   [class*='col-'] {
+     float: left;
+     padding-right: 5px;
+   }
+
+   [class*='col-']:last-of-type {
+     	padding-right: 5px;
+   }
+   .highlight-on{
+     width: 40px;
+   }
+
+   .highlight-off{
+     width: 40px;
+   }
+
+}
+
+/* add padding for wide screens */
+@media (min-width: 1000px){
+  body {
+  	padding: 10px 125px 50px;
+    background-color: #333333;
+  }
+}
+
+/*  REALLY small screens */
+@media (max-width: 330px){
+  i{ font-size:32px;
+     color: 48px;
+   }
+   body {
+     padding: 10px 10px 50px;
+     background-color: #333333;
+   }
+   .fbox{
+     margin-top: 5px;
+     margin-left: 5px;
+     margin-right: 5px;
+   }
+   .module {
+     padding: 0px;
+     background: #eee;
+     text-align: center;
+   }
+
+   /* Opt-in outside padding */
+   .grid-pad {
+     padding: 10px 0 10px 5px;
+   }
+
+   [class*='col-'] {
+     float: left;
+     padding-right: 5px;
+   }
+
+   [class*='col-']:last-of-type {
+     	padding-right: 5px;
+   }
+   .highlight-on{
+     width: 40px;
+   }
+
+   .highlight-off{
+     width: 40px;
+   }
+   .circle
+   {
+     height:100px;
+     width:100px;
+     font-size: 32px;
+     padding-top: 15px;
+   }
+   #temp i{
+     font-size:32;
+     color: #ffffff;
+   }
+   #day1text, #day2text, #day3text, #day4text,#day5text{
+     font-size: 13px;
+     padding-left: 0px;
+     padding-right: 0px;
+   }
+}
