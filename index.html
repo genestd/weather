@@ -1,134 +1,163 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-      <title>Weather</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
 
+<head>
+  <meta charset="utf-8">
+  <title>Weather</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <link rel='stylesheet prefetch' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css'>
-    <link rel="stylesheet" href="css/weather-icons.min.css">
-    <link rel="stylesheet" href="css/weather-icons-wind.min.css">
-    <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/weather-icons.min.css">
+  <link rel="stylesheet" href="css/weather-icons-wind.min.css">
+  <link rel="stylesheet" href="css/style.css">
 
-  </head>
+</head>
+
 <body>
   <h2>Instant Weather</h2>
 
 
   <div class="grid grid-pad">
     <div class="fbox">
-     <div class="fcol">
-       <div class="module">
-         <h3 id="locDesc"></h3>
-       </div>
-       <div class="col-1-4 main"><div class="highlight-on" id="f"><i class="wi wi-fahrenheit"></i></div></div>
-       <div class="col-1-2 main mid"><div class="circle" id="temp"><i class="wi wi-thermometer"></i><br><div id="currTemp"></div></div></div>
-       <div class="col-1-4 main"><div class="highlight-off" id="c"><i class="wi wi-celsius"></i></div></div>
-       <div class="module" id="summary">Current conditions:
-       </div>
+      <div class="fcol">
+        <div class="module">
+          <h3 id="locDesc"></h3>
+        </div>
+        <div class="col-1-4 main">
+          <div class="highlight-on" id="f"><i class="wi wi-fahrenheit"></i></div>
+        </div>
+        <div class="col-1-2 main mid">
+          <div class="circle" id="temp"><i class="wi wi-thermometer"></i><br>
+            <div id="currTemp"></div>
+          </div>
+        </div>
+        <div class="col-1-4 main">
+          <div class="highlight-off" id="c"><i class="wi wi-celsius"></i></div>
+        </div>
+        <div class="module" id="summary">Current conditions:
+        </div>
       </div>
     </div>
   </div>
 
   <div class="grid grid-pad">
     <div class="fbox">
-     <div class="fcol">
-       <div class="module" id="cldIcon">
-         <i class="wi wi-day-sunny"></i>
-       </div>
-       <div class="module" ><div id="cloudCover">Loading...</div>
-       </div>
-     </div>
-     <div class="fcol">
-       <div class="module" id="precipIcon">
-         <i class="wi wi-umbrella wi-fw"></i>
-         <i class="wi wi-na"></i>
-       </div>
-       <div class="module" id="precipitation">Loading...</div>
-     </div>
-    <div class="fcol">
-       <div class="module">
-         <i class="wi wi-humidity wi-fw"></i>
-       </div>
-       <div class="module" id="humidity">Loading...</div>
-     </div>
+      <div class="fcol">
+        <div class="module" id="cldIcon">
+          <i class="wi wi-day-sunny"></i>
+        </div>
+        <div class="module">
+          <div id="cloudCover">Loading...</div>
+        </div>
+      </div>
+      <div class="fcol">
+        <div class="module" id="precipIcon">
+          <i class="wi wi-umbrella wi-fw"></i>
+          <i class="wi wi-na"></i>
+        </div>
+        <div class="module" id="precipitation">Loading...</div>
+      </div>
+      <div class="fcol">
+        <div class="module">
+          <i class="wi wi-humidity wi-fw"></i>
+        </div>
+        <div class="module" id="humidity">Loading...</div>
+      </div>
 
-  </div>
-</div>
-  <div class="grid grid-pad">
-    <div class="fbox">
-     <div class="fcol">
-       <div class="module">
-         <i class="wi wi-barometer wi-fw"></i>
-       </div>
-       <div class="module" id="pressure">Loading</div>
-     </div>
-     <div class="fcol">
-       <div class="module" id="bfs">
-         <i class="wi wi-strong-wind"></i>
-       </div>
-       <div class="module" id="wind">Loading</div>
-     </div>
-    <div class="fcol">
-       <div class="module">
-         <i class="wi wi-meteor wi-fw"></i>
-       </div>
-       <div class="module" id="alerts">Loading</div>
     </div>
   </div>
+  <div class="grid grid-pad">
+    <div class="fbox">
+      <div class="fcol">
+        <div class="module">
+          <i class="wi wi-barometer wi-fw"></i>
+        </div>
+        <div class="module" id="pressure">Loading</div>
+      </div>
+      <div class="fcol">
+        <div class="module" id="bfs">
+          <i class="wi wi-strong-wind"></i>
+        </div>
+        <div class="module" id="wind">Loading</div>
+      </div>
+      <div class="fcol">
+        <div class="module">
+          <i class="wi wi-meteor wi-fw"></i>
+        </div>
+        <div class="module" id="alerts">Loading</div>
+      </div>
+    </div>
   </div>
 
   <div class="grid grid-pad credit">
     <div class="fbox">
-    <div class="fcol">
-      <div class="module" id="sevenDaySummary">
+      <div class="fcol">
+        <div class="module" id="sevenDaySummary">
+        </div>
       </div>
     </div>
-  </div>
-  <div class="fbox">
-    <div class="fcol">
-      <div class="module" id="day1icon">
+    <div class="fbox">
+      <div class="fcol">
+        <div class="module" id="day1icon">
+        </div>
+        <div class="module" id="day1text">
+        </div>
       </div>
-      <div class="module" id="day1text">
+      <div class="fcol">
+        <div class="module" id="day2icon">
+        </div>
+        <div class="module" id="day2text">
+        </div>
+      </div>
+      <div class="fcol">
+        <div class="module" id="day3icon">
+        </div>
+        <div class="module" id="day3text">
+        </div>
+      </div>
+      <div class="fcol">
+        <div class="module" id="day4icon">
+        </div>
+        <div class="module" id="day4text">
+        </div>
+      </div>
+      <div class="fcol">
+        <div class="module" id="day5icon">
+        </div>
+        <div class="module" id="day5text">
+        </div>
       </div>
     </div>
-    <div class="fcol">
-      <div class="module" id="day2icon">
-      </div>
-      <div class="module" id="day2text">
-      </div>
-    </div>
-    <div class="fcol">
-      <div class="module" id="day3icon">
-      </div>
-      <div class="module" id="day3text">
-      </div>
-    </div>
-    <div class="fcol">
-      <div class="module" id="day4icon">
-      </div>
-      <div class="module" id="day4text">
-      </div>
-    </div>
-    <div class="fcol">
-      <div class="module" id="day5icon">
-      </div>
-      <div class="module" id="day5text">
-      </div>
-    </div>
-  </div>
     <a href="https://darksky.net/poweredby/" target="_blank">Powered by Dark Sky</a>
   </div>
 
-<div id="footer">&copy;2016 David Genest
-</div>
-<script src='https://code.jquery.com/jquery-2.2.4.min.js'></script>
-<script src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js' type="text/javascript"></script>
+  <div id="footer">&copy;2016 David Genest
+  </div>
+  <!--<script src='https://code.jquery.com/jquery-2.2.4.min.js'></script>
 <script src='https://cdnjs.cloudflare.com/ajax/libs/velocity/1.2.3/velocity.js' type="text/javascript"></script>
-<script src='https://cdnjs.cloudflare.com/ajax/libs/velocity/1.2.3/velocity.ui.js' type="text/javascript"></script>
-<script src='js/dateformat.js'></script><script src="js/index.js" type="text/javascript"></script>
-
+<script src='https://cdnjs.cloudflare.com/ajax/libs/velocity/1.2.3/velocity.ui.js' type="text/javascript"></script>-->
+  <script src="js/index.js" type="text/javascript"></script>
+  <script type="text/javascript">
+    function downloadJSAtOnload() {
+      var element = document.createElement("script");
+      var element2 = document.createElement("script");
+      var element3 = document.createElement("script");
+      element.src = "https://code.jquery.com/jquery-2.2.4.min.js";
+      element2.src = "https://cdnjs.cloudflare.com/ajax/libs/velocity/1.2.3/velocity.js";
+      element3.src = "https://cdnjs.cloudflare.com/ajax/libs/velocity/1.2.3/velocity.ui.js";
+      element.type = "text/javascript";
+      element2.type = "text/javascript";
+      element3.type = "text/javascript";
+      document.body.appendChild(element);
+      document.body.appendChild(element2);
+      document.body.appendChild(element3);
+    }
+    if (window.addEventListener)
+      window.addEventListener("load", downloadJSAtOnload, false);
+    else if (window.attachEvent)
+      window.attachEvent("onload", downloadJSAtOnload);
+    else window.onload = downloadJSAtOnload;
+  </script>
 
 </body>
+
 </html>
