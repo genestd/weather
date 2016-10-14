@@ -52,34 +52,41 @@ var beaufortScale=
 
 
 $(document).ready(function(){
-  var testdate = new Date(1470380400*1000);
-  console.log(testdate);
   /* Event handlers for the Fahrenheit/Celsius buttons */
-  $("#f").on("click touchstart", function(e){
-    if ($("#f").hasClass("highlight-on")){
-      return;
-    } else {
-      $("#f").velocity({translateY: "2px", translateX: "1px"},{duration:100}).velocity("reverse");
-      $("#f").toggleClass("highlight-on highlight-off");
-      $("#c").toggleClass("highlight-on highlight-off");
-      temp = Math.round(((temp * 1.8)+32),0);
-      $("#currTemp").html(temp + "&deg;");
-    }
-  });
-  $("#c").on("click touchstart", function(e){
-    if ($("#c").hasClass("highlight-on")){
-      return;
-    } else {
-      $("#c").velocity({translateY: "2px", translateX: "1px"},{duration:100}).velocity("reverse");
-      $("#f").toggleClass("highlight-on highlight-off");
-      $("#c").toggleClass("highlight-on highlight-off");
-      temp = Math.round(((temp-32)*(5/9)),0);
-      $("#currTemp").html(temp + "&deg;");
-    }
+  $("#f").on("click touchstart", handleFClick);
+  $("#c").on("click touchstart", handleCClick);
+});
 
-  });
+$(window).on("load", function(){
   refreshWeather();
 });
+
+/*HandleFahrenheitClick()*/
+function handleFClick(event){
+  if ($("#f").hasClass("highlight-on")){
+    return;
+  } else {
+    $("#f").velocity({translateY: "2px", translateX: "1px"},{duration:100}).velocity("reverse");
+    $("#f").toggleClass("highlight-on highlight-off");
+    $("#c").toggleClass("highlight-on highlight-off");
+    temp = Math.round(((temp * 1.8)+32),0);
+    $("#currTemp").html(temp + "&deg;");
+  }
+}
+
+/* handle Celsius click */
+function handleCClick(event){
+  if ($("#c").hasClass("highlight-on")){
+    return;
+  } else {
+    $("#c").velocity({translateY: "2px", translateX: "1px"},{duration:100}).velocity("reverse");
+    $("#f").toggleClass("highlight-on highlight-off");
+    $("#c").toggleClass("highlight-on highlight-off");
+    temp = Math.round(((temp-32)*(5/9)),0);
+    $("#currTemp").html(temp + "&deg;");
+  }
+}
+
 /* If location is known, call the Forecast.IO api
    Otherwise, call the GoogleMaps api
 */
@@ -115,7 +122,6 @@ function getLocation() {
    Next we call the forecastIO API with these coordinates
 */
 function getPosition(position) {
-  console.log(position);
     latitude = position.coords.latitude;
     longitude = position.coords.longitude;
     $.ajax({ url:'https://maps.googleapis.com/maps/api/geocode/json?latlng='+latitude+','+longitude+'&sensor=true',
@@ -167,14 +173,12 @@ function update(response){
 /* Not much error handling...just update the console */
 
 function handleErr(err){
-    console.log(err);
 }
 
 /* if geolocation cannot return the position
    use coordinates for Alcatraz
 */
 function handleGeoLocErr(err){
-  console.log(err);
   geoLoc = false;
   locDesc = "Geolocation is not supported by this browser.  Showing weather data for Alcatraz.";
   $("#locDesc").html(locDesc);
@@ -263,7 +267,6 @@ function updateDisplay(){
   //display the weekly forecast //
   $("#sevenDaySummary").html( sevenDaySummary );
   for( y=0; y<5; y++){
-    console.log($("#day"+(y+1)+"icon"));
     $("#day"+(y+1)+"icon").html("<i class='wi wi-forecast-io-" + fiveDayIcon[y] + " wi-fw'></i>");
     $("#day"+(y+1)+"text").html("<b>" + fiveDayDate[y].format("ddd") + "<br>" + fiveDayDate[y].format( "mmm d") + "</b><br>" + Math.floor(fiveDayLow[y]) + " / " + Math.floor(fiveDayHigh[y]));
   }
@@ -313,7 +316,6 @@ function getFiveDayForecast(){
     fiveDayHigh[x] = weather.daily.data[x+1].temperatureMax;
     fiveDayIcon[x] = weather.daily.data[x+1].icon;
     fiveDayDate[x] = new Date( weather.daily.data[x+1].time*1000);
-    console.log(fiveDayDate[x].toString("month, dd"));
   }
 }
 
