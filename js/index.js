@@ -266,7 +266,7 @@ function updateDisplay(){
   }
   //display the weekly forecast //
   $("#sevenDaySummary").html( sevenDaySummary );
-  for( y=0; y<5; y++){
+  for( var y=0; y<5; y++){
     $("#day"+(y+1)+"icon").html("<i class='wi wi-forecast-io-" + fiveDayIcon[y] + " wi-fw'></i>");
     $("#day"+(y+1)+"text").html("<b>" + fiveDayDate[y].format("ddd") + "<br>" + fiveDayDate[y].format( "mmm d") + "</b><br>" + Math.floor(fiveDayLow[y]) + " / " + Math.floor(fiveDayHigh[y]));
   }
