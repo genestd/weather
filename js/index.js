@@ -1,3 +1,4 @@
+//mobile 66 - descktop 85
 var weather;
 var cloudCover;
 var cloudIcon;
@@ -57,7 +58,7 @@ $(document).ready(function(){
   $("#c").on("click touchstart", handleCClick);
 });
 
-$(window).on("load", function(){
+$(window).bind("load", function(){
   refreshWeather();
 });
 
